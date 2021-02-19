@@ -1,0 +1,17 @@
+<%
+nombre = session[:usuario_nombre].to_s.downcase
+%>
+<div>
+<h1>Inicio#home</h1>
+<h2>Bienvenido</h2> 
+<br><br>
+<% if session[:usuario_id] != nil %>
+    <h3> HA INICIADO SESIÓN EN NUESTRA WEB, MUCHAS GRACIAS </h3>
+    <p>Estás logeado como <%=nombre%></p> 
+    <p><a href="/logout">Cerrar Sesion</a></p>
+    <% else %>
+    <h3> Bienvenido a nuestra web, puede iniciar sesión y registrarse</h3>
+    <p><a href="/login">Iniciar Sesion</a></p>
+    <p><a href="/usuarios/new">Registro</a></p>
+    <% end %>
+</div>
